@@ -1,4 +1,4 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, ConfigDict
 from datetime import datetime
 
 class DoorCodeOut(BaseModel):
@@ -6,5 +6,4 @@ class DoorCodeOut(BaseModel):
     expires_at: datetime
     used: bool
 
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)
